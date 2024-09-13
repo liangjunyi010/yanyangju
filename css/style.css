@@ -275,6 +275,7 @@ h2 {
         width: 100%; /* 调整每个房间卡片的宽度为90%以适应小屏幕 */
         margin-bottom: 20px; /* 增加卡片间的间距 */
         max-width: 400px; /* 限制卡片最大宽度，避免在大屏幕设备上过宽 */
+        box-sizing: border-box; /* 确保 padding 不会导致溢出 */
     }
 }
 
