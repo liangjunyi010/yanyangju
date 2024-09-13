@@ -223,6 +223,14 @@ h2 {
     position: relative; /* 为点击链接定位 */
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* 设置卡片的高度为100% */
+    position: relative; /* 为点击链接定位 */
+}
+
 .room-item:hover {
     transform: scale(1.05); /* 鼠标悬停时卡片放大效果 */
 }
