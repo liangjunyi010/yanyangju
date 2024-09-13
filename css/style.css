@@ -1,0 +1,454 @@
+/* 通用样式 */
+body, h1, h2, h3, h4, p, ul {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Section 1 带入 */
+.section-intro {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1; /* 背景在最底层 */
+    overflow: hidden;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* 半透明黑色遮罩，调整透明度 */
+    z-index: -1; /* 遮罩层在背景图上，保持在内容下方 */
+}
+
+.content-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1; /* 确保内容在遮罩层和背景之上 */
+}
+
+.logo {
+    width: 600px;
+    margin-bottom: 10px;
+}
+
+.custom-font {
+    font-family: 'Noto Sans CJK SC', 'WenQuanYi Zen Hei', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+    font-size: 5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: 'Noto Sans CJK SC', 'WenQuanYi Zen Hei', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+    font-size: 3em;
+    margin-top: 0;
+    padding-top: 0;
+}
+/* Section 2 简介 */
+.section-about {
+    display: flex;
+    padding: 0;
+    background-color: #faf3e0; /* 浅米黄色背景 */
+    z-index: -2;
+}
+
+.background-overlay-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.18); /* 半透明黑色遮罩，调整透明度 */
+    z-index: -1; /* 遮罩层在背景图上，保持在内容下方 */
+}
+
+.about-left {
+    flex: 1;
+    background-size: 50%; /* 确保图片填充整个容器，并裁剪不重要部分 */
+    /* background-repeat: no-repeat; */
+    background-position: left center; /* 确保图片在容器内居中显示 */
+    position: relative;
+    color: white;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.about-left h1 {
+    font-family: 'Noto Sans CJK SC', 'WenQuanYi Zen Hei', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.about-left h2 {
+    font-family: 'Noto Sans CJK SC', 'WenQuanYi Zen Hei', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+    font-size: 2em;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.about-right {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-item {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.about-item img {
+    width: 150%; /* 图片宽度为父元素宽度 */
+    max-width: 300px; /* 确保图片的最大宽度 */
+    height: auto; /* 保持图片的比例 */
+    object-fit: cover; /* 确保图片填充容器并裁剪多余部分 */
+    margin-right: 20px;
+}
+
+.text-content h3 {
+    font-family: 'Noto Sans CJK SC', 'WenQuanYi Zen Hei', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0px;
+    color: #333;
+}
+
+.text-content h4 {
+    font-family: 'Noto Sans CJK SC', 'WenQuanYi Zen Hei', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+    font-size: 1.6em;
+    font-weight: normal;
+    margin-top: 0px;
+    color: orange;
+}
+
+/* 调整 image2 的背景图实现视差滚动效果 */
+.about-left {
+    background-attachment: fixed;
+}
+
+/* 媒体查询，当屏幕宽度小于 768px 时，将内容竖直排列 */
+@media (max-width: 768px) {
+    .section-about {
+        flex-direction: column; /* 将左右排列改为竖直排列 */
+    }
+
+    .about-left, .about-right {
+        flex: none; /* 取消 flex 属性，使内容自适应宽度 */
+        width: 100%; /* 设置宽度为 100% */
+        padding: 20px; /* 给每个部分适当的内边距 */
+    }
+
+    .about-item {
+        flex-direction: column; /* 图片和文字竖直排列 */
+        align-items: center; /* 水平居中 */
+        text-align: center; /* 文本居中 */
+    }
+
+    .about-item img {
+        width: 300px; /* 调整图片宽度 */
+        margin-right: 0; /* 取消右边距 */
+        margin-bottom: 20px; /* 为图片增加下方的间隙 */
+    }
+
+    .text-content {
+        align-items: center; /* 内容居中 */
+    }
+}
+
+/* Section 3 房间 */
+.section-rooms {
+    text-align: center;
+    padding: 50px;
+    background-color: #f5f5f5; /* 浅灰色背景 */
+}
+
+.section-rooms h1 {
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+/* 大屏幕布局 */
+.rooms {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* 保证卡片高度一致 */
+    margin-bottom: 20px;
+}
+
+.room-item {
+    text-align: center;
+    width: 30%; /* 三个房间卡片各占30%宽度 */
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 卡片阴影 */
+    border-radius: 10px;
+    background-color: white; /* 卡片背景色 */
+    cursor: pointer; /* 鼠标悬停时显示为可点击 */
+    transition: transform 0.3s ease-in-out;
+    position: relative; /* 为点击链接定位 */
+}
+
+.room-item:hover {
+    transform: scale(1.05); /* 鼠标悬停时卡片放大效果 */
+}
+
+.card-header img {
+    object-fit: cover;
+    width: 100%;
+    height: 200px; /* 调整图片高度 */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* 保证标题和人数在底部 */
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card-excerpt {
+    color: #777;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* 点击获取详情链接 */
+.card-link {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: blue;
+    text-decoration: underline;
+}
+
+/* 小屏幕时的响应式布局 */
+@media (max-width: 768px) {
+    .rooms {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .room-item {
+        width: 100%; /* 调整每个房间卡片的宽度为100% */
+        margin-bottom: 20px; /* 增加卡片间的间距 */
+    }
+}
+
+
+/* Section 4 套餐 */
+.section-packages {
+    text-align: center;
+    padding: 50px;
+    background-color: #faf3e0; /* 浅米黄色背景 */
+}
+
+.section-packages h1 {
+    font-size: 3em; /* 放大套餐选择标题 */
+    margin-bottom: 40px;
+}
+
+/* 大屏幕布局 */
+.package1, .package2, .package3, .package4 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: stretch; /* 保证卡片高度一致 */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* 设置卡片的高度为100% */
+    position: relative; /* 为点击链接定位 */
+}
+
+.card-content {
+    flex-grow: 1; /* 使内容部分可以填满卡片 */
+}
+
+.package-item, .details-item {
+    text-align: center;
+    width: 45%; /* 左侧和右侧各占50%宽度 */
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 卡片阴影 */
+    border-radius: 10px;
+    background-color: white; /* 卡片背景色 */
+    margin-bottom: 20px; /* 卡片之间的间隙 */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    min-height: 400px; /* 强制所有卡片的最小高度一致 */
+}
+
+.package-item:hover, .details-item:hover {
+    transform: scale(1.05); /* 鼠标悬停时卡片放大效果 */
+}
+
+.card-header img {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-title {
+    font-size: 1.5em; /* 套餐名字字体较小 */
+    margin-bottom: 10px;
+}
+
+.card-price {
+    font-size: 1.2em;
+    color: #777;
+    margin-top: 5px;
+}
+
+.card-link {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: blue;
+    text-decoration: underline;
+}
+
+.details-item ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.details-item a.card-link {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* 小屏幕时的响应式布局 */
+@media (max-width: 768px) {
+    .package1, .package2, .package3, .package4 {
+        flex-direction: column;
+    }
+
+    .package-item, .details-item {
+        width: 100%; /* 左右列各占100%宽度 */
+        min-height: 100%; /* 保证高度一致 */
+    }
+}
+
+
+
+/* Section 5 外卖/就餐附加 */
+.section-additional {
+    text-align: center;
+    padding: 50px;
+    background-color: #f5f5f5; /* 浅灰色背景 */
+}
+
+.section-additional h2{
+    font-size: medium;
+    color: red;
+}
+
+.section-additional h1 {
+    font-size: 3em; /* 放大套餐选择标题 */
+    margin-bottom: 40px;
+}
+
+.additional-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch; /* 保证卡片高度一致 */
+}
+
+/* 卡片样式 */
+.additional-item {
+    width: 22%; /* 调整宽度，使每行显示4个卡片 */
+    background-color: white; /* 卡片背景 */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 卡片阴影 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.additional-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.additional-item h2 {
+    color: black;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.additional-item p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* 小屏幕时的响应式布局 */
+@media (max-width: 768px) {
+    .additional-items {
+        flex-direction: column; /* 改为竖直排列 */
+    }
+
+    .additional-item {
+        width: 100%; /* 调整每个卡片的宽度为100% */
+    }
+}
+
+/* Section 6 联系方式 */
+.section-contact {
+    text-align: center;
+    padding: 50px;
+    background-color: #faf3e0; /* 浅米黄色背景 */
+}
