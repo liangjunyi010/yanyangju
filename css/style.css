@@ -453,3 +453,16 @@ img {
     color: #c0392b;
     font-weight: bold;
   }
+
+  /* 在手机上竖向显示文字 */
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column; /* 让导航栏垂直排列 */
+    }
+
+    .nav a {
+        writing-mode: vertical-rl; /* 让文字垂直排列 */
+        text-orientation: upright; /* 保持文字方向正向 */
+        padding: 10px 5px; /* 调整垂直排列时的间距 */
+    }
+}
