@@ -74,3 +74,58 @@ const fixNav = () => {
 };
 
 window.addEventListener("scroll", fixNav);
+
+//轮播
+const slides = document.querySelectorAll(".slide");
+const nextButton = document.getElementById("next");
+const prevButton = document.getElementById("prev");
+const auto = true; // 自动播放
+const intervalTime = 5000; // 5秒切换
+let slideInterval;
+
+const nextSlide = () => {
+  const current = document.querySelector(".current");
+  current.classList.remove("current");
+  
+  // 如果有下一个幻灯片，添加 "current" 类，否则重置到第一个
+  if (current.nextElementSibling) {
+    current.nextElementSibling.classList.add("current");
+  } else {
+    slides[0].classList.add("current");
+  }
+};
+
+const prevSlide = () => {
+  const current = document.querySelector(".current");
+  current.classList.remove("current");
+  
+  // 如果有前一个幻灯片，添加 "current" 类，否则重置到最后一个
+  if (current.previousElementSibling) {
+    current.previousElementSibling.classList.add("current");
+  } else {
+    slides[slides.length - 1].classList.add("current");
+  }
+};
+
+// 下一张按钮事件
+nextButton.addEventListener("click", () => {
+  nextSlide();
+  if (auto) {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, intervalTime);
+  }
+});
+
+// 上一张按钮事件
+prevButton.addEventListener("click", () => {
+  prevSlide();
+  if (auto) {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, intervalTime);
+  }
+});
+
+// 自动播放
+if (auto) {
+  slideInterval = setInterval(nextSlide, intervalTime);
+}
