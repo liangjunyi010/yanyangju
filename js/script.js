@@ -40,3 +40,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+// Scroll Animation JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const boxes = document.querySelectorAll(".box");
+
+    const checkBoxes = () => {
+        const triggerBottom = (window.innerHeight / 5) * 4;
+        boxes.forEach((box) => {
+            const boxTop = box.getBoundingClientRect().top;
+            if (boxTop < triggerBottom) {
+                box.classList.add("show");
+            } else {
+                box.classList.remove("show");
+            }
+        });
+    };
+
+    window.addEventListener("scroll", checkBoxes);
+    checkBoxes(); // 初始化检查
+});

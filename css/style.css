@@ -384,3 +384,19 @@ img {
         height: auto;
     }
 }
+
+/* Scroll Animation 相关样式 */
+.box {
+    background-color: #fff; /* 保持项目原有背景色 */
+    transform: translateX(400%);
+    transition: transform 0.4s ease;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .box:nth-of-type(even) {
+    transform: translateX(-400%);
+  }
+  
+  .box.show {
+    transform: translateX(0);
+  }
