@@ -61,3 +61,16 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener("scroll", checkBoxes);
     checkBoxes(); // 初始化检查
 });
+
+// Scroll-triggered Navigation Menu
+const nav = document.querySelector(".nav");
+
+const fixNav = () => {
+    if (window.scrollY > nav.offsetHeight + 150) {
+        nav.classList.add("active");
+    } else {
+        nav.classList.remove("active");
+    }
+};
+
+window.addEventListener("scroll", fixNav);
