@@ -75,7 +75,8 @@ const fixNav = () => {
 
 window.addEventListener("scroll", fixNav);
 
-//轮播
+
+// section 5
 const slides = document.querySelectorAll(".slide");
 const nextButton = document.getElementById("next");
 const prevButton = document.getElementById("prev");
@@ -86,24 +87,24 @@ let slideInterval;
 const nextSlide = () => {
   const current = document.querySelector(".current");
   current.classList.remove("current");
-  
+
   // 如果有下一个幻灯片，添加 "current" 类，否则重置到第一个
-  if (current.nextElementSibling) {
+  if (current.nextElementSibling && current.nextElementSibling.classList.contains("slide")) {
     current.nextElementSibling.classList.add("current");
   } else {
-    slides[0].classList.add("current");
+    slides[0].classList.add("current"); // 确保切换到第一张幻灯片
   }
 };
 
 const prevSlide = () => {
   const current = document.querySelector(".current");
   current.classList.remove("current");
-  
+
   // 如果有前一个幻灯片，添加 "current" 类，否则重置到最后一个
-  if (current.previousElementSibling) {
+  if (current.previousElementSibling && current.previousElementSibling.classList.contains("slide")) {
     current.previousElementSibling.classList.add("current");
   } else {
-    slides[slides.length - 1].classList.add("current");
+    slides[slides.length - 1].classList.add("current"); // 确保切换到最后一张幻灯片
   }
 };
 
