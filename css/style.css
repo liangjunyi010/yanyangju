@@ -465,7 +465,7 @@ img {
 
 .section-5 h1 {
   font-size: 3em; /* 放大套餐选择标题 */
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 
 .slider {
