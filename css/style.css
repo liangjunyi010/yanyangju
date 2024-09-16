@@ -459,7 +459,7 @@ img {
 
 .section-5 {
   text-align: center;
-  padding: 1px;
+  padding: 0;
   background-color: #f5f5f5; /* 浅灰色背景 */
 }
 
@@ -473,8 +473,9 @@ img {
   width: 100vw;
   height: 80vh; /* 改为自动高度，容纳标题和滑动内容 */
   text-align: center; /* 确保标题居中对齐 */
-  padding: 50px;
+  padding: 10px;
   overflow: hidden;
+  background-color: #f5f5f5;
 }
 
 .slider h1 {
