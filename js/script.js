@@ -75,6 +75,57 @@ const fixNav = () => {
 
 window.addEventListener("scroll", fixNav);
 
+// Section 3 房间滑动控制
+const roomSlides = document.querySelectorAll(".room-slide");
+const roomNextButton = document.getElementById("room-next");
+const roomPrevButton = document.getElementById("room-prev");
+const autoRoom = true; // 自动播放
+const intervalRoomTime = 5000; // 5秒切换
+let roomSlideInterval;
+
+const nextRoomSlide = () => {
+  const current = document.querySelector(".room-slide.current");
+  current.classList.remove("current");
+
+    if (current.nextElementSibling && current.nextElementSibling.classList.contains("room-slide")) {
+      current.nextElementSibling.classList.add("current");
+    } else {
+      roomSlides[0].classList.add("current");
+    }
+  }; // 加入适当延迟，避免空白过渡
+
+const prevRoomSlide = () => {
+  const current = document.querySelector(".room-slide.current");
+  current.classList.remove("current");
+    if (current.previousElementSibling && current.previousElementSibling.classList.contains("room-slide")) {
+      current.previousElementSibling.classList.add("current");
+    } else {
+      roomSlides[roomSlides.length - 1].classList.add("current");
+    }
+  }; 
+
+// 下一张按钮事件
+roomNextButton.addEventListener("click", () => {
+  nextRoomSlide();
+  if (autoRoom) {
+    clearInterval(roomSlideInterval);
+    roomSlideInterval = setInterval(nextRoomSlide, intervalRoomTime);
+  }
+});
+
+// 上一张按钮事件
+roomPrevButton.addEventListener("click", () => {
+  prevRoomSlide();
+  if (autoRoom) {
+    clearInterval(roomSlideInterval);
+    roomSlideInterval = setInterval(nextRoomSlide, intervalRoomTime);
+  }
+});
+
+// 自动播放
+if (autoRoom) {
+  roomSlideInterval = setInterval(nextRoomSlide, intervalRoomTime);
+}
 
 // section 5
 const slides = document.querySelectorAll(".slide");
@@ -85,7 +136,7 @@ const intervalTime = 5000; // 5秒切换
 let slideInterval;
 
 const nextSlide = () => {
-  const current = document.querySelector(".current");
+  const current = document.querySelector(".slide.current");
   current.classList.remove("current");
 
   // 如果有下一个幻灯片，添加 "current" 类，否则重置到第一个

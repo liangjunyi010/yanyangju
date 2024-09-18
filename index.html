@@ -55,27 +55,36 @@
     </section>
 
     <!-- Section 3 房间 -->
-    <section id="room" class="section-additional">
-        <h1>房间信息</h1>
-        <div class="additional-items">
-            <div class="additional-item card box" onclick="location.href='./room/jiayang.html'">
-                <h2>嘉羊</h2>
-                <img src="assets/images/image5.jpg" alt="全羊">
-                <p>7-8人</p>
-            </div>
-            <div class="additional-item card box" onclick="location.href='#'">
-                <h2>迴雁</h2>
-                <img src="assets/images/image6.jpg" alt="半羊">
-                <p>10-11人</p>
-            </div>
-            <div class="additional-item card box" onclick="location.href='#'">
-                <h2>吉羊</h2>
-                <img src="assets/images/image7.jpg" alt="烤雁">
-                <p>11-12人</p>
-            </div>
-        </div>
-    </section>
+<section id="room" class="section-room">
+    <h1>房间信息</h1>
+</section>
 
+<section class="room-slider">
+    <div class="room-slide current">
+        <div class="content">
+            <h1>嘉羊</h1>
+            <p>7-8人</p>
+        </div>
+    </div>
+    <div class="room-slide">
+        <div class="content">
+            <h1>迴雁</h1>
+            <p>10-11人</p>
+        </div>
+    </div>
+    <div class="room-slide">
+        <div class="content">
+            <h1>吉羊</h1>
+            <p>11-12人</p>
+        </div>
+    </div>
+
+    <!-- 将按钮放在滑动容器内 -->
+    <div class="buttons">
+        <button id="room-prev"><i class="fas fa-arrow-left"></i></button>
+        <button id="room-next"><i class="fas fa-arrow-right"></i></button>
+    </div>
+</section>
 
 <!-- Section 4 套餐 -->
     <section id="set" class="section-packages">
