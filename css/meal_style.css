@@ -7,16 +7,74 @@
 body {
   font-family: "Muli", sans-serif;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  height: auto;
+  overflow-x: hidden;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+/* 新增的套餐信息样式 */
+.meal-info {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+.meal-info h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.meal-info p {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* 外部黑色边框包围和分隔线样式 */
+.meal-box {
+  border: 2px solid black; /* 外部黑框 */
+  display: flex;
   justify-content: center;
-  height: 100vh;
-  overflow: hidden;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.meal-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+
+.meal-list ul {
+  list-style-type: none;
+  padding: 0;
   margin: 0;
 }
 
+.meal-list ul li {
+  margin: 5px 0;
+  font-size: 1.1em;
+}
+
+.divider {
+  width: 2px;
+  height: 100%;
+  background-color: black; /* 分隔线颜色 */
+  position: relative;
+}
+
+/* 图片展示容器 */
 .container {
   display: flex;
   width: 90vw;
+  margin-top: 20px;
+  overflow-x: scroll;
 }
 
 .panel {
@@ -31,7 +89,6 @@ body {
   margin: 10px;
   position: relative;
   transition: flex 0.7s ease-in;
-  -webkit-transition: all 700ms ease-in;
 }
 
 .panel h3 {
@@ -52,13 +109,46 @@ body {
   transition: opacity 0.3s ease-in 0.4s;
 }
 
+/* 适配手机屏幕 */
 @media (max-width: 480px) {
-  .container {
-    width: 100vw;
+  body {
+    height: auto;
   }
 
-  .panel:nth-of-type(4),
-  .panel:nth-of-type(5) {
+  .container {
+    width: 100vw;
+    margin-top: 10px;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .meal-info {
+    font-size: 1em;
+  }
+
+  .meal-info h2 {
+    font-size: 1.5em;
+  }
+
+  .meal-info p {
+    font-size: 1.2em;
+  }
+
+  .meal-box {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .meal-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .meal-list ul li {
+    font-size: 1em;
+  }
+
+  .divider {
     display: none;
   }
 }
