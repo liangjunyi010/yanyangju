@@ -156,7 +156,6 @@ body {
 
 body.show-nav {
   overflow-x: hidden;
-  overflow-y: hidden; /* 如果你想完全禁止滚动，包含垂直滚动 */
 }
 
 .container2 {
