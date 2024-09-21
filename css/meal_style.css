@@ -199,11 +199,11 @@ body {
 }
 
 .circle button#open {
-  left: 55%;
+  left: 50%;
 }
 
 .circle button#close {
-  top: 55%;
+  top: 50%;
   transform: rotate(90deg);
   transform-origin: top left;
 }
