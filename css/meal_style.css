@@ -11,9 +11,8 @@ body {
   align-items: center;
   justify-content: flex-start;
   height: auto;
-  overflow-x: hidden;
   margin: 0;
-  padding-bottom: 20px;
+  padding: 0;
 }
 
 /* 新增的套餐信息样式 */
@@ -72,22 +71,21 @@ body {
 /* 图片展示容器 */
 .container {
   display: flex;
-  width: 90vw;
-  margin-top: 20px;
-  overflow-x: scroll;
   flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 100vw;
+  margin-top: 20px;
 }
 
 .panel {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 50vh; /* 改小图片的高度 */
-  width: 100vw; /* 改为100vw以适应手机屏幕 */
+  height: 50vh;
+  min-width: 80vw; /* 确保图片在手机端的宽度 */
   border-radius: 20px;
   color: #fff;
   cursor: pointer;
-  flex: 0.5;
   margin: 10px;
   position: relative;
   transition: flex 0.7s ease-in;
@@ -118,15 +116,14 @@ body {
   }
 
   .container {
-    width: 100vw;
-    margin-top: 10px;
     flex-direction: column;
+    margin-top: 10px;
     height: auto;
   }
 
   .panel {
-    height: 40vh; /* 调整图片在小屏幕上的高度 */
-    width: 100%; /* 保持宽度与屏幕一致 */
+    height: 40vh;
+    width: 100%; /* 保证图片在手机上的宽度 */
     margin: 5px 0;
   }
 
