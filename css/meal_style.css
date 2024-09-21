@@ -75,14 +75,16 @@ body {
   width: 90vw;
   margin-top: 20px;
   overflow-x: scroll;
+  flex-wrap: nowrap;
 }
 
 .panel {
-  background-size: auto 100%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 80vh;
-  border-radius: 50px;
+  height: 50vh; /* 改小图片的高度 */
+  width: 100vw; /* 改为100vw以适应手机屏幕 */
+  border-radius: 20px;
   color: #fff;
   cursor: pointer;
   flex: 0.5;
@@ -120,6 +122,12 @@ body {
     margin-top: 10px;
     flex-direction: column;
     height: auto;
+  }
+
+  .panel {
+    height: 40vh; /* 调整图片在小屏幕上的高度 */
+    width: 100%; /* 保持宽度与屏幕一致 */
+    margin: 5px 0;
   }
 
   .meal-info {
