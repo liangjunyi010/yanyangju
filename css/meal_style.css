@@ -9,10 +9,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  height: auto;
   margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* 禁止水平滚动 */
 }
 
-/* 套餐信息样式 */
+/* 套餐信息部分 */
 .meal-info {
   text-align: center;
   margin-top: 20px;
@@ -31,7 +35,7 @@ body {
 
 /* 外部黑色边框包围和分隔线样式 */
 .meal-box {
-  border: 2px solid black;
+  border: 2px solid black; /* 外部黑框 */
   display: flex;
   justify-content: center;
   padding: 20px;
@@ -68,6 +72,7 @@ body {
 /* 图片展示容器 */
 .container {
   display: flex;
+  overflow-x: hidden; /* 禁止手动左右滑动 */
   width: 90vw;
   margin-top: 20px;
 }
@@ -106,6 +111,10 @@ body {
 
 /* 适配手机屏幕 */
 @media (max-width: 768px) {
+  body {
+    height: auto;
+  }
+
   .panel {
     height: 50vh;
   }
