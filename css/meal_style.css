@@ -11,6 +11,7 @@ body {
   /* flex-direction: column; */
   /* align-items: center; */
   /* justify-content: flex-start; */
+  max-width: 100vw;
   height: auto;
   margin: 0;
   padding: 0;
@@ -155,7 +156,9 @@ body {
 }
 
 body.show-nav {
+  width: 100vw;
   overflow-x: hidden;
+  /* overflow-y: hidden; 如果你想完全禁止滚动，包含垂直滚动 */
 }
 
 .container2 {
