@@ -229,11 +229,12 @@ nav a {
   text-decoration: none;
   transition: all 0.5s;
 }
-
+nav a.current,
 nav a:hover {
   color: #FF7979;
   font-weight: bold;
 }
+
 nav ul {
   list-style-type: none;
   padding-left: 30px;
