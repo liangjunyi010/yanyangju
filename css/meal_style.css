@@ -9,13 +9,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  height: auto;
   margin: 0;
-  padding: 0;
 }
 
-/* 新增的套餐信息样式 */
+/* 套餐信息样式 */
 .meal-info {
   text-align: center;
   margin-top: 20px;
@@ -34,7 +31,7 @@ body {
 
 /* 外部黑色边框包围和分隔线样式 */
 .meal-box {
-  border: 2px solid black; /* 外部黑框 */
+  border: 2px solid black;
   display: flex;
   justify-content: center;
   padding: 20px;
@@ -64,16 +61,14 @@ body {
 .divider {
   width: 2px;
   height: 100%;
-  background-color: black; /* 分隔线颜色 */
+  background-color: black;
   position: relative;
 }
 
 /* 图片展示容器 */
 .container {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  width: 100vw;
+  width: 90vw;
   margin-top: 20px;
 }
 
@@ -81,11 +76,11 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 50vh;
-  min-width: 80vw; /* 确保图片在手机端的宽度 */
+  height: 60vh;
   border-radius: 20px;
   color: #fff;
   cursor: pointer;
+  flex: 0.5;
   margin: 10px;
   position: relative;
   transition: flex 0.7s ease-in;
@@ -110,21 +105,9 @@ body {
 }
 
 /* 适配手机屏幕 */
-@media (max-width: 480px) {
-  body {
-    height: auto;
-  }
-
-  .container {
-    flex-direction: column;
-    margin-top: 10px;
-    height: auto;
-  }
-
+@media (max-width: 768px) {
   .panel {
-    height: 40vh;
-    width: 100%; /* 保证图片在手机上的宽度 */
-    margin: 5px 0;
+    height: 50vh;
   }
 
   .meal-info {
