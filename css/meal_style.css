@@ -16,7 +16,94 @@ body {
   overflow-x: hidden; /* 禁止水平滚动 */
 }
 
-/* 套餐信息部分 */
+.container {
+  background-color: #fafafa;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.circle {
+  background-color: #ff7979;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: #fff;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+
+nav ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.container.show-nav + nav ul li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+/* 套餐信息样式 */
 .meal-info {
   text-align: center;
   margin-top: 20px;
@@ -33,9 +120,8 @@ body {
   font-weight: bold;
 }
 
-/* 外部黑色边框包围和分隔线样式 */
 .meal-box {
-  border: 2px solid black; /* 外部黑框 */
+  border: 2px solid black;
   display: flex;
   justify-content: center;
   padding: 20px;
@@ -48,7 +134,6 @@ body {
   justify-content: center;
   align-items: center;
   gap: 40px;
-  position: relative;
 }
 
 .meal-list ul {
@@ -66,17 +151,9 @@ body {
   width: 2px;
   height: 100%;
   background-color: black;
-  position: relative;
 }
 
-/* 图片展示容器 */
-.container {
-  display: flex;
-  overflow-x: hidden; /* 禁止手动左右滑动 */
-  width: 90vw;
-  margin-top: 20px;
-}
-
+/* 图片展示部分 */
 .panel {
   background-size: cover;
   background-position: center;

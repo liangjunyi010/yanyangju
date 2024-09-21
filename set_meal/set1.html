@@ -5,59 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>雁羊居 - 雁羊高照套餐</title>
     <link rel="stylesheet" href="../css/meal_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+<!-- Rotating Navigation Menu -->
+<div class="circle-container">
+    <div class="circle">
+        <button id="close">
+            <i class="fas fa-times"></i>
+        </button>
+        <button id="open">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</div>
+
+<nav>
+    <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> 主页</a></li>
+        <li><a href="set1.html"><i class="fas fa-utensils"></i> 套餐 1</a></li>
+        <li><a href="set2.html"><i class="fas fa-utensils"></i> 套餐 2</a></li>
+        <li><a href="set3.html"><i class="fas fa-utensils"></i> 套餐 3</a></li>
+        <li><a href="set4.html"><i class="fas fa-utensils"></i> 套餐 4</a></li>
+    </ul>
+</nav>
+
 <!-- 新增的套餐信息部分 -->
-<div class="meal-info">
-    <h2>套餐名称：雁羊高照</h2>
-    <p>价格：1880 元</p>
-    <div class="meal-box">
-        <div class="meal-list">
-            <ul>
-              <li>一只烤雁，两只烤乳鸽</li>
-              <li>半只乳羔滩羊</li>
-            </ul>
-            <div class="divider"></div> <!-- 添加分隔线 -->
-            <ul>
-              <li>爽口配菜</li>
-              <li>餐前养生粥</li>
-              <li>两个烤馕</li>
-              <li>手抓饭</li>
-              <li>滋补羊汤</li>
-              <li>2例果盘</li>
-            </ul>
+<div class="container">
+    <div class="meal-info">
+        <h2>套餐名称：雁羊高照</h2>
+        <p>价格：1880 元</p>
+        <div class="meal-box">
+            <div class="meal-list">
+                <ul>
+                    <li>一只烤雁，两只烤乳鸽</li>
+                    <li>半只乳羔滩羊</li>
+                </ul>
+                <div class="divider"></div>
+                <ul>
+                    <li>爽口配菜</li>
+                    <li>餐前养生粥</li>
+                    <li>两个烤馕</li>
+                    <li>手抓饭</li>
+                    <li>滋补羊汤</li>
+                    <li>2例果盘</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 图片展示部分 -->
+    <div class="container">
+        <div class="panel active" style="background-image: url('../assets/images/set1_1.jpg');">
+            <h3>Explore the world</h3>
+        </div>
+        <div class="panel" style="background-image: url('../assets/images/set1_2.jpg');">
+            <h3>Explore the world</h3>
+        </div>
+        <div class="panel" style="background-image: url('../assets/images/set1_3.jpg');">
+            <h3>Explore the world</h3>
         </div>
     </div>
 </div>
 
-<!-- 图片展示部分 -->
-<div class="container">
-  <div
-    class="panel active"
-    style="
-      background-image: url('../assets/images/set1_1.jpg');
-    "
-  >
-    <h3>Explore the world</h3>
-  </div>
-  <div
-    class="panel"
-    style="
-      background-image: url('../assets/images/set1_2.jpg');
-    "
-  >
-    <h3>Explore the world</h3>
-  </div>
-  <div
-    class="panel"
-    style="
-      background-image: url('../assets/images/set1_3.jpg');
-    "
-  >
-    <h3>Explore the world</h3>
-  </div>
-</div>
-
 <script src="../js/meal.js"></script>
+<script src="../js/nav.js"></script>
 </body>
 </html>
