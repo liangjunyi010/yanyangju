@@ -19,6 +19,7 @@ body {
   color: #222;
 }
 
+
 /* 套餐信息部分 */
 .meal-info {
   text-align: center;
@@ -153,8 +154,13 @@ body {
   }
 }
 
+body.show-nav {
+  overflow-x: hidden;
+  overflow-y: hidden; /* 如果你想完全禁止滚动，包含垂直滚动 */
+}
 
 .container2 {
+  overflow-x: hidden; /* 禁止水平滚动 */
   background-color: #fafafa;
   transform-origin: top left;
   transition: transform 0.5s linear;
