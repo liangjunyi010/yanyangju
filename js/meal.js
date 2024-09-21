@@ -2,8 +2,8 @@ const panels = document.querySelectorAll(".panel");
 
 panels.forEach((panel) => {
   panel.addEventListener("click", () => {
-    removeActiveClasses();
-    panel.classList.add("active");
+    removeActiveClasses(); // 移除所有图片的 active 状态
+    panel.classList.add("active"); // 添加 active 状态
   });
 });
 

@@ -94,6 +94,7 @@ body {
   margin: 10px;
   position: relative;
   transition: flex 0.7s ease-in;
+  z-index: 1; /* 确保所有图片都有点击层级 */
 }
 
 .panel h3 {
@@ -107,6 +108,7 @@ body {
 
 .panel.active {
   flex: 5;
+  z-index: 10; /* 点击后将当前图片放到最上层 */
 }
 
 .panel.active h3 {
