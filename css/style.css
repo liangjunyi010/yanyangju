@@ -204,22 +204,22 @@ h2 {
 /* 房间背景图片 */
 .room-slide:first-child {
   background: url('../assets/images/image15.jpg') no-repeat center center/cover;
-  background-size: 50%;
+  /* background-size: 50%; */
 }
 
 .room-slide:nth-child(2) {
   background: url('../assets/images/gezi.jpg') no-repeat center center/cover;
-  background-size: 50%;
+  /* background-size: 50%; */
 }
 
 .room-slide:nth-child(3) {
   background: url('../assets/images/quanyanglihe.jpg') no-repeat center center/cover;
-  background-size: 50%;
+  /* background-size: 50%; */
 }
 
 .room-slide:nth-child(4) {
   background: url('../assets/images/banyanglihe.jpg') no-repeat center center/cover;
-  background-size: 50%;
+  /* background-size: 50%; */
 }
 
 /* 左右箭头按钮样式 */
@@ -570,27 +570,27 @@ img {
   /* 各个幻灯片的背景图片 */
   .slide:first-child {
     background: url("../assets/images/image9.jpg") no-repeat center center/cover;
-    background-size: 30%;
+    /* background-size: 30%; */
   }
   
   .slide:nth-child(2) {
     background: url("../assets/images/dayan.jpg") no-repeat center center/cover;
-    background-size: 25%;
+    /* background-size: 25%; */
   }
   
   .slide:nth-child(3) {
     background: url("../assets/images/image5.jpg") no-repeat center center/cover;
-    background-size: 50%;
+    /* background-size: 50%; */
   }
   
   .slide:nth-child(4) {
     background: url("../assets/images/image6.jpg") no-repeat center center/cover;
-    background-size: 50%;
+    /* background-size: 50%; */
   }
 
   .slide:nth-child(5) {
     background: url("../assets/images/image7.jpg") no-repeat center center/cover;
-    background-size: 50%;
+    /* background-size: 50%; */
   }
   
   /* 左右箭头按钮样式 */
