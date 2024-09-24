@@ -204,7 +204,7 @@ h2 {
 /* 房间背景图片 */
 .room-slide:first-child {
   background: url('../assets/images/image15.jpg') no-repeat center center/cover;
-  background-size: 80%;
+  background-size: 90%;
 }
 
 .room-slide:nth-child(2) {
@@ -580,17 +580,17 @@ img {
   
   .slide:nth-child(3) {
     background: url("../assets/images/image5.jpg") no-repeat center center/cover;
-    background-size: 85%;
+    background-size: 95%;
   }
   
   .slide:nth-child(4) {
     background: url("../assets/images/image6.jpg") no-repeat center center/cover;
-    background-size: 85%;
+    background-size: 95%;
   }
 
   .slide:nth-child(5) {
     background: url("../assets/images/image7.jpg") no-repeat center center/cover;
-    background-size: 85%;
+    background-size: 95%;
   }
   
   /* 左右箭头按钮样式 */
