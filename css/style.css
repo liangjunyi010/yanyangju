@@ -576,11 +576,13 @@ img {
   .slide:first-child {
     background: url("../assets/images/quanyangset.jpg") no-repeat center center/cover;
     /* background-size: 30%; */
+    background-size: 99%;
   }
   
   .slide:nth-child(2) {
     background: url("../assets/images/dayan.jpg") no-repeat center center/cover;
     /* background-size: 25%; */
+    background-size: 99%;
   }
   
   .slide:nth-child(3) {
